@@ -15,6 +15,10 @@ The following functionality is **completed**:
 - [x] User can set and play different audio
 - [x] User can view a random image in a new window when the alarm goes off
 
+## Screenshots
+<img src='clock1.JPG' title='App Window' width='' alt='App window' />
+<img src='clock2.jpg' title='Alarm Triggered' width='' alt='Alarm trigger window' />
+
 ## Requesting/Receiving Data
 - [x] A request can be made to my microservice by calling a getTime() method in your program which opens a ZMQ socket connection and sends a request. Optionally, the request may also send data to my microservice during this open connection.
 - [x] Data can be received from my microservice by clicking the "Send Time to Client" button in Project AlarmClock. This will be picking up the call in a sendTime() method to get the current time and send it back before closing the ZMQ socket connection.
