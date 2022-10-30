@@ -2,7 +2,7 @@ from tkinter import *
 import datetime
 import time
 import winsound
-
+from pygame import mixer
 
 def alarm(set_alarm_timer):
     """Set the timer for the alarm."""
@@ -10,13 +10,16 @@ def alarm(set_alarm_timer):
         time.sleep(1)
         current_time = datetime.datetime.now()
         now = current_time.strftime("%H:%M:%S")
-        date = current_time.strftime("%d/%m/%Y")
+        date = current_time.strftime("%m/%d/%Y")
         print("The Set Date is:", date)
         print(now)
         if now == set_alarm_timer:
             print("Time to Wake up")
-        winsound.PlaySound("sound.wav", winsound.SND_ASYNC)
-        break
+            mixer.init()
+            mixer.music.load(r'C:\Users\vlyse\Music\tedingerIG.mp3')
+            mixer.music.play()
+            # winsound.PlaySound("sound.wav", winsound.SND_ASYNC)
+            break
 
 
 def actual_time():
@@ -39,9 +42,9 @@ min = StringVar()
 sec = StringVar()
 
 # Time required to set the alarm clock
-hourTime = Entry(clock, textvariable = hour, bg = "pink", width = 15).place(x=110, y=30)
-minTime = Entry(clock, textvariable = min, bg = "pink", width = 15).place(x=150, y=30)
-secTime = Entry(clock, textvariable = sec , bg = "pink", width = 15).place(x=200, y=30)
+hourTime = Entry(clock, textvariable = hour, bg = "blue", width = 15).place(x=110, y=30)
+minTime = Entry(clock, textvariable = min, bg = "blue", width = 15).place(x=150, y=30)
+secTime = Entry(clock, textvariable = sec , bg = "blue", width = 15).place(x=200, y=30)
 
 # Take input from user
 submit = Button(clock, text = "Set Alarm", fg = "red", width = 15, command = actual_time).place(x=110, y=70)
