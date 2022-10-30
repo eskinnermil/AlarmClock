@@ -1,4 +1,4 @@
-# Project AlarmClock.py
+# Project AlarmClock
 
 Project AlarmClock is a Tkinter application designed to set an alarm and play an audio cue when the alarm matches the time.
 
